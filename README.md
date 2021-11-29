@@ -61,6 +61,7 @@ It is assumed that you already have AWS and Google accounts.
 * Open Telegram app, search for @BotFather and start the chat.
 * Send `/newbot` command and follow the instructions. After completing the initial steps, you’ll get your own TOKEN
 
+
 ## Deploy the sample application
 
 * Clone repository
@@ -96,7 +97,7 @@ Deploy your application with the` sam deploy command.
 tsibraBot$ sam deploy --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
 ```
 
-## Set API WebHook
+### Set API WebHook
 For APIGatevay to track bot activity - register a webhook via telegram api
 Paste in yor browser
 ```bash
