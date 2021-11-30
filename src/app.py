@@ -4,7 +4,7 @@ import json
 import telebot
 from telebot import types
 
-from .services import SIGN_RU, answer_by_ai, horoskop_parser
+from src.services import SIGN_RU, answer_by_ai, horoskop_parser
 
 bot = telebot.TeleBot(os.getenv('TOKEN'))
 
