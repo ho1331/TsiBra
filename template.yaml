@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  tsibraBotLambda
+
+  Sample SAM Template for tsibraBotLambda
+
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  TelegramToken:
+    Type: String
+    Description: Telegram bot token
+
+Resources:
+  TsiBraFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Environment: 
+          Variables:
+              TOKEN: !Ref TelegramToken
+      Architectures:
+        - x86_64
+      Events:
+        TelegramWebHook:
+          Type: Api 
+          Properties:
+            Path: /
+            Method: post
+
+Outputs:
+  TsiBraApi:
+    Description: "API Gateway endpoint URL for Prod stage for TelegramBot function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/telebot/"
+  TsiBraFunction:
+    Description: "Telebot Lambda Function ARN"
+    Value: !GetAtt TsiBraFunction.Arn
+  TsiBraFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt TsiBraFunctionRole.Arn
