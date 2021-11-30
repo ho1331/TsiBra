@@ -3,7 +3,6 @@
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - src - Code for the application's Lambda function.
-- tests - Unit tests for the application code. 
 - template.yaml - A template that defines the application's AWS resources.
 
 ### Resources
@@ -93,7 +92,7 @@ The SAM CLI installs dependencies defined in `src/requirements.txt`, creates a d
 Deploy your application with the` sam deploy command.
 
 ```bash
-$ sam deploy --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
+$ sam deploy --guided --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
 ```
 
 ### Set API WebHook
@@ -102,19 +101,6 @@ Go to the AWS Lambda console, select ApiGateway and copy path from it
 Paste in yor browser
 ```bash
 https://api.telegram.org/bot<you_telegram_bot_token>/setWebHook?url=<url_from_your_deployed_ApiGateway>
-```
-
-## Tests
-
-Tests are defined in the `tests` folder in this project. Use PIP to install the test dependencies and run tests.
-
-```bash
-tsibraBot$ pip install -r tests/requirements.txt --user
-# unit test
-tsibraBot$ python -m pytest tests/unit -v
-# integration test, requiring deploying the stack first.
-# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
-tsibraBot$ AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
 ```
 
 ## Cleanup
