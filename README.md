@@ -3,7 +3,6 @@
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - src - Code for the application's Lambda function.
-- events - Invocation events example that you can use to invoke the function.
 - tests - Unit tests for the application code. 
 - template.yaml - A template that defines the application's AWS resources.
 
@@ -98,7 +97,8 @@ $ sam deploy --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
 ```
 
 ### Set API WebHook
-For APIGatevay to track bot activity - register a webhook via telegram api
+For APIGatevay to track bot activity - register a webhook via telegram api.
+Go to the AWS Lambda console, select ApiGateway and copy path from it
 Paste in yor browser
 ```bash
 https://api.telegram.org/bot<you_telegram_bot_token>/setWebHook?url=<url_from_your_deployed_ApiGateway>
