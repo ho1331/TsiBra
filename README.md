@@ -83,10 +83,10 @@ Install the SAM CLI
 pip install aws-sam-cli
 ```
 
-Build your application with the `sam build command.
+Build your application with the `sam build` command.
 
 ```bash
-tsibraBot$ sam build
+$ sam build
 ```
 
 The SAM CLI installs dependencies defined in `src/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -94,7 +94,7 @@ The SAM CLI installs dependencies defined in `src/requirements.txt`, creates a d
 Deploy your application with the` sam deploy command.
 
 ```bash
-tsibraBot$ sam deploy --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
+$ sam deploy --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
 ```
 
 ### Set API WebHook
