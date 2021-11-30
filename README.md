@@ -63,6 +63,11 @@ It is assumed that you already have AWS and Google accounts.
 ## Deploy the sample application
 
 * Clone repository
+
+Then change folder
+```bash 
+cd TsiBra
+```
 * Copy the contents of the downloaded file in json format to the `private_key.json` file
 
 Install awscli
