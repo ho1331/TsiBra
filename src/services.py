@@ -46,11 +46,11 @@ SIGNS = dict(zip(SIGN_RU, SIGN_US))
 
 
 def horoskop_parser(sign):
-    url = f'https://www.elle.ru/astro/{SIGNS.get(sign).lower()}/day/'
+    url = f'https://1001goroskop.ru/?znak={SIGNS.get(sign).lower()}'
     page = requests.get(url)
     soup = BeautifulSoup(page.text, "html.parser")
 
-    alldiv = soup.find('div', class_='articleParagraph articleParagraph_dropCap')
+    alldiv = soup.find('div', class_='eje_block')
     horoskop = alldiv.find('p').text
 
     return horoskop
