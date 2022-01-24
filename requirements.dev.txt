@@ -1,0 +1,2 @@
+awscli==1.22.41
+aws-sam-cli==1.37.0

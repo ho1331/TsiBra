@@ -94,10 +94,10 @@ $ sam build
 
 The SAM CLI installs dependencies defined in `src/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
-Deploy your application with the` sam deploy command.
+Deploy your application with the` sam deploy command (click Y for each command).
 
 ```bash
-$ sam deploy --guided --parameter-overrides 'TelegramToken=<you_telegram_bot_token>
+$ sam deploy --guided --parameter-overrides 'TelegramToken=<you_telegram_bot_token>'
 ```
 
 ### Set API WebHook
@@ -105,7 +105,7 @@ For APIGatevay to track bot activity - register a webhook via telegram api.
 Go to the AWS Lambda console, select ApiGateway and copy path from it
 Paste in yor browser
 ```bash
-https://api.telegram.org/bot<you_telegram_bot_token>/setWebHook?url=<url_from_your_deployed_ApiGateway>
+https://api.telegram.org/bot<you_telegram_bot_token>/setWebHook?url=<url_from_your_ApiGateway>
 ```
 
 ## Cleanup
@@ -113,5 +113,5 @@ https://api.telegram.org/bot<you_telegram_bot_token>/setWebHook?url=<url_from_yo
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-aws cloudformation delete-stack --stack-name tsibraBot
+aws cloudformation delete-stack --stack-name <your_stack_name>
 ```
